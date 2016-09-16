@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import fragments.GroceryFragment;
+import fragments.MyAdMobFragment;
 import fragments.MyMapFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,8 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private static String TAG = MainActivity.class.getSimpleName();
     private FragmentManager mFragmentManager;
     private FragmentTransaction mFragmentTransaction;
-    private Fragment mGroceryFragment;
-    private Fragment mSampleFragment;
+    private Fragment mGroceryFragment, mSampleFragment, mMyAdMobFragment;
 
 
     @Override
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     public void initViews() {
         try {
 
-            transactionProcess(1, "");
+            transactionProcess(2, "");
 
         } catch (Exception exp) {
             exp.printStackTrace();
@@ -48,10 +48,9 @@ public class MainActivity extends AppCompatActivity {
             } else if (position == 1) {
                 mSampleFragment = MyMapFragment.newInstance(1);
                 startFragment(mSampleFragment);
-            }
-            else if (position == 2) {
-                mSampleFragment = MyMapFragment.newInstance(1);
-                startFragment(mSampleFragment);
+            } else if (position == 2) {
+                mMyAdMobFragment = MyAdMobFragment.newInstance(1);
+                startFragment(mMyAdMobFragment);
             }
 
         } catch (Exception exp) {

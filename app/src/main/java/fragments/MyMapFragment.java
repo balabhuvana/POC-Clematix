@@ -159,7 +159,7 @@ public class MyMapFragment extends SupportMapFragment implements OnMapReadyCallb
             }
         });
 
-//        mGoogleApiClient.connect();
+        mGoogleApiClient.connect();
 
 
     }

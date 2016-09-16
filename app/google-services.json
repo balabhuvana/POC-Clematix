@@ -1,0 +1,112 @@
+{
+  "project_info": {
+    "project_number": "590337559832",
+    "firebase_url": "https://admob-app-id-7308566868.firebaseio.com",
+    "project_id": "admob-app-id-7308566868",
+    "storage_bucket": "admob-app-id-7308566868.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590337559832:android:f8f1295db60697eb",
+        "android_client_info": {
+          "package_name": "admob.com.poc_admob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590337559832-latej9qabrkbabj7f63n4r4o8t8c6hhj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlxoP9Sof4ZG5iyf-NHl7H3fr2O5zGJSo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590337559832:android:92c4f63b7365e5ed",
+        "android_client_info": {
+          "package_name": "admob.learn.com.learn_admob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590337559832-c3l4kibtfntobuhmdc6d70lhlrr8ic58.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "admob.learn.com.learn_admob",
+            "certificate_hash": "1289E82BDC04FA74D2874E3E672B60D7A8E6A284"
+          }
+        },
+        {
+          "client_id": "590337559832-latej9qabrkbabj7f63n4r4o8t8c6hhj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlxoP9Sof4ZG5iyf-NHl7H3fr2O5zGJSo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590337559832:android:5b71a09e4744dd25",
+        "android_client_info": {
+          "package_name": "clematix.com.poc_clematix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590337559832-latej9qabrkbabj7f63n4r4o8t8c6hhj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlxoP9Sof4ZG5iyf-NHl7H3fr2O5zGJSo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

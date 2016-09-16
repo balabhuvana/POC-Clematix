@@ -18,5 +18,6 @@
     <dimen name="fourty_five_dp">45dp</dimen>
     <dimen name="fifty_dp">50dp</dimen>
     <dimen name="seventy_dp">75dp</dimen>
+    <dimen name="margin_bottom">16dp</dimen>
 
 </resources>
