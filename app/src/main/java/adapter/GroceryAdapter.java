@@ -15,9 +15,7 @@ import java.util.List;
 import clematix.com.poc_clematix.R;
 import model.Fruits;
 
-/**
- * Created by Kannan on 6/9/2016.
- */
+
 public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.FruitViewHolder> {
 
     private Context mContext;

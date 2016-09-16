@@ -1,5 +1,6 @@
 package fragments;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -52,9 +53,11 @@ public class MyMapFragment extends SupportMapFragment implements OnMapReadyCallb
 
     ;
 
-    public static MyMapFragment newInstance(int columnCount) {
+    public static MyMapFragment newInstance(int columnCount, String title) {
         MyMapFragment fragment = new MyMapFragment();
         Bundle args = new Bundle();
+        args.putInt("someInt", columnCount);
+        args.putString("someTitle", title);
         fragment.setArguments(args);
         return fragment;
     }
@@ -101,6 +104,16 @@ public class MyMapFragment extends SupportMapFragment implements OnMapReadyCallb
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         mMap.setMyLocationEnabled(true);
 
     }
@@ -114,18 +127,10 @@ public class MyMapFragment extends SupportMapFragment implements OnMapReadyCallb
                 .addApi(LocationServices.API)
                 .build();
 
-
-//        LocationRequest locationRequest = LocationRequest.create();
-//        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-//        locationRequest.setInterval(30 * 1000);
-//        locationRequest.setFastestInterval(5 * 1000);
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                 .addLocationRequest(mLocationRequest);
 
-        //**************************
-        builder.setAlwaysShow(true); //this is the key ingredient
-        //**************************
-
+        builder.setAlwaysShow(true);
 
         PendingResult<LocationSettingsResult> result =
                 LocationServices.SettingsApi.checkLocationSettings(mGoogleApiClient, builder.build());
@@ -161,7 +166,6 @@ public class MyMapFragment extends SupportMapFragment implements OnMapReadyCallb
 
         mGoogleApiClient.connect();
 
-
     }
 
     @Override
@@ -186,9 +190,11 @@ public class MyMapFragment extends SupportMapFragment implements OnMapReadyCallb
     }
 
     protected void stopLocationUpdates() {
-        LocationServices.FusedLocationApi.removeLocationUpdates(
-                mGoogleApiClient, this);
-        Log.d(TAG, "Location update stopped .......................");
+        if (mGoogleApiClient.isConnected()) {
+            LocationServices.FusedLocationApi.removeLocationUpdates(
+                    mGoogleApiClient, this);
+            Log.d(TAG, "Location update stopped .......................");
+        }
     }
 
     @Override
@@ -279,6 +285,16 @@ public class MyMapFragment extends SupportMapFragment implements OnMapReadyCallb
     }
 
     protected void startLocationUpdates() {
+        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         PendingResult<Status> pendingResult = LocationServices.FusedLocationApi.requestLocationUpdates(
                 mGoogleApiClient, mLocationRequest, this);
 

@@ -5,4 +5,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_bala_maps">Map</string>
     <string name="banner_ad_unit_id">ca-app-pub-6776210341653397/6610562865</string>
+    <string name="title_activity_action_bar_tabs_pager">ActionBarTabsPager</string>
 </resources>

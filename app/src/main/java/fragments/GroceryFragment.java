@@ -34,9 +34,11 @@ public class GroceryFragment extends Fragment {
     private static GroceryAdapter mGroceryAdapter;
 
 
-    public static GroceryFragment newInstance(int columnCount) {
+    public static GroceryFragment newInstance(int columnCount, String title) {
         GroceryFragment fragment = new GroceryFragment();
         Bundle args = new Bundle();
+        args.putInt("someInt", columnCount);
+        args.putString("someTitle", title);
         fragment.setArguments(args);
         return fragment;
     }

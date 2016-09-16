@@ -24,9 +24,11 @@ public class MyAdMobFragment extends Fragment {
     private Context mContext;
 
 
-    public static MyAdMobFragment newInstance(int columnCount) {
+    public static MyAdMobFragment newInstance(int columnCount, String title) {
         MyAdMobFragment fragment = new MyAdMobFragment();
         Bundle args = new Bundle();
+        args.putInt("someInt", columnCount);
+        args.putString("someTitle", title);
         fragment.setArguments(args);
         return fragment;
     }
@@ -165,7 +167,8 @@ public class MyAdMobFragment extends Fragment {
             // get test ads on a physical device. e.g.
             // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
             AdRequest adRequest = new AdRequest.Builder()
-                    .addTestDevice("2C9B9F08B98B020647EB730484C27FA1")
+                    .addTestDevice("2C9B9F08B98B020647EB730484C27FA1").
+                            addTestDevice("617BF717ACB3C7D4803651602E5502B1")
                     .build();
 
             // Start loading the ad in the background.
